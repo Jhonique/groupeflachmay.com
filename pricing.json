@@ -1,0 +1,41 @@
+{
+  "currency": "CAD",
+  "residential": {
+    "basePrices": [
+      { "maxSqFt": 499, "price": null, "label": "Moins de 500 pi²" },
+      { "minSqFt": 500, "maxSqFt": 749, "price": null, "label": "500–749 pi²" },
+      { "minSqFt": 750, "maxSqFt": 999, "price": null, "label": "750–999 pi²" },
+      { "minSqFt": 1000, "maxSqFt": 1249, "price": null, "label": "1 000–1 249 pi²" },
+      { "minSqFt": 1250, "maxSqFt": 1499, "price": null, "label": "1 250–1 499 pi²" },
+      { "minSqFt": 1500, "maxSqFt": 1999, "price": null, "label": "1 500–1 999 pi²" },
+      { "minSqFt": 2000, "price": null, "label": "2 000 pi² et plus" }
+    ],
+    "extraBathroomPrice": null,
+    "deepCleanPercent": null,
+    "moveOutPercent": null,
+    "extras": {
+      "oven": null,
+      "fridgeInterior": null,
+      "interiorWindow": null
+    }
+  },
+  "commercial": {
+    "regularPricePerSqFt": null,
+    "deepCleanPricePerSqFt": null,
+    "minimumVisitPrice": null,
+    "extras": {
+      "oven": null,
+      "fridgeInterior": null,
+      "interiorWindow": null
+    }
+  },
+  "hourly": {
+    "standardRate": 35,
+    "demandingRate": 45,
+    "extras": {
+      "oven": null,
+      "fridgeInterior": null,
+      "interiorWindow": null
+    }
+  }
+}

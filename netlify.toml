@@ -1,0 +1,11 @@
+[build]
+  publish = "public"
+[functions]
+  directory = "netlify/functions"
+  included_files = ["pricing.json"]
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
