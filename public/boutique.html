@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demandez un devis pour les services de nettoyage résidentiel et commercial de Groupe Flachmay au Québec.">
+  <title>Boutique et réservation | Groupe Flachmay</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #203044; background: #f4f7fa; line-height: 1.6; }
+    header { background: #123c5a; color: white; padding: 26px 18px; text-align: center; }
+    header h1 { margin: 0; font-size: 29px; }
+    header p { margin-bottom: 0; }
+    nav { background: #fff; padding: 12px; text-align: center; }
+    nav a { color: #123c5a; font-weight: bold; text-decoration: none; }
+    main { max-width: 760px; margin: 28px auto; padding: 0 16px; }
+    .card { background: white; padding: 24px; border-radius: 14px; box-shadow: 0 3px 14px #172b3d12; margin-bottom: 20px; }
+    h2 { color: #123c5a; margin-top: 0; }
+    label { display: block; font-weight: bold; margin: 15px 0 5px; }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #bbc8d3; border-radius: 7px; font: inherit; background: white; }
+    button { width: 100%; margin-top: 22px; padding: 14px; background: #087f70; color: white; border: 0; border-radius: 8px; font-size: 17px; font-weight: bold; cursor: pointer; }
+    .note { background: #e9f5f2; padding: 14px; border-radius: 8px; }
+    footer { text-align: center; padding: 25px; color: #566574; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+    @media(max-width: 560px) { .grid { grid-template-columns: 1fr; } .card { padding: 18px; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Groupe Flachmay</h1>
+  <p>Des espaces propres, un service de confiance</p>
+</header>
+<nav><a href="/">Accueil</a> &nbsp; | &nbsp; <a href="/boutique.html">Nos services et réservations</a></nav>
+<main>
+  <section class="card">
+    <h2>Nos services de nettoyage</h2>
+    <p>Choisissez le service qui vous intéresse et envoyez-nous votre demande de réservation.</p>
+    <ul>
+      <li>Nettoyage résidentiel</li>
+      <li>Nettoyage commercial et bureaux</li>
+      <li>Nettoyage après déménagement</li>
+      <li>Grand ménage saisonnier</li>
+      <li>Entretien régulier</li>
+    </ul>
+    <p class="note"><strong>Prix sur confirmation :</strong> votre demande ne constitue pas une réservation confirmée. Groupe Flachmay vérifiera les détails et vous communiquera le prix avant de confirmer le rendez-vous. Aucun paiement en ligne n'est demandé ici.</p>
+  </section>
+
+  <section class="card">
+    <h2>Demande de devis et de réservation</h2>
+    <form name="demande-nettoyage" method="POST" data-netlify="true" action="/merci.html">
+      <input type="hidden" name="form-name" value="demande-nettoyage">
+
+      <div class="grid">
+        <div>
+          <label for="nom">Nom complet *</label>
+          <input id="nom" name="nom" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Adresse courriel *</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <label for="telephone">Téléphone *</label>
+      <input id="telephone" name="telephone" type="tel" autocomplete="tel" required>
+
+      <label for="service">Service souhaité *</label>
+      <select id="service" name="service" required>
+        <option value="">Choisir un service</option>
+        <option>Nettoyage résidentiel</option>
+        <option>Nettoyage commercial / bureau</option>
+        <option>Nettoyage après déménagement</option>
+        <option>Grand ménage saisonnier</option>
+        <option>Entretien régulier</option>
+      </select>
+
+      <div class="grid">
+        <div>
+          <label for="surface">Superficie approximative (pi²)</label>
+          <input id="surface" name="superficie-pieds-carres" type="number" min="0" placeholder="Ex. 1200">
+        </div>
+        <div>
+          <label for="frequence">Fréquence</label>
+          <select id="frequence" name="frequence">
+            <option>Une seule fois</option>
+            <option>Chaque semaine</option>
+            <option>Toutes les deux semaines</option>
+            <option>Chaque mois</option>
+          </select>
+        </div>
+        <div>
+          <label for="chambres">Nombre de chambres</label>
+          <input id="chambres" name="chambres" type="number" min="0" value="0">
+        </div>
+        <div>
+          <label for="sdb">Nombre de salles de bain</label>
+          <input id="sdb" name="salles-de-bain" type="number" min="0" value="1">
+        </div>
+      </div>
+
+      <label for="adresse">Ville et code postal *</label>
+      <input id="adresse" name="ville-code-postal" autocomplete="postal-code" required>
+
+      <label for="date">Date souhaitée</label>
+      <input id="date" name="date-souhaitee" type="date">
+
+      <label for="extras">Extras souhaités</label>
+      <select id="extras" name="extras">
+        <option>Aucun extra sélectionné</option>
+        <option>Nettoyage du four</option>
+        <option>Nettoyage du réfrigérateur</option>
+        <option>Fenêtres intérieures</option>
+        <option>Plusieurs extras — préciser ci-dessous</option>
+      </select>
+
+      <label for="details">Détails supplémentaires</label>
+      <textarea id="details" name="details" rows="4" placeholder="Précisions sur le logement, le local ou les besoins particuliers"></textarea>
+
+      <label>
+        <input type="checkbox" name="accord-contact" value="oui" required style="width:auto">
+        J'accepte que Groupe Flachmay me contacte au sujet de cette demande. *
+      </label>
+
+      <button type="submit">Envoyer ma demande</button>
+    </form>
+  </section>
+</main>
+<footer>© Groupe Flachmay — Demande soumise à confirmation du prix et de la disponibilité.</footer>
+</body>
+</html>
